@@ -17,7 +17,7 @@ class Application
     elsif req.path.match(/cart/)
       if @@cart.empty?
         resp.write "Your cart is empty"
-      else 
+      else
         @@cart.each do |item|
           resp.write "#{item}\n"
         end
@@ -26,7 +26,7 @@ class Application
         if @@items.include?(items_to_add)
           @@cart << items_to_add
           resp.write "added #{items_to_add}"
-        else 
+        else
           resp.write "We don't have that item"
         end
         
